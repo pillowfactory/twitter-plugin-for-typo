@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'twitter-sidebar' %>
+<%= javascript_include_tag 'twitter-1.11.1.min.js' %>
+<script type="text/javascript" charset="utf-8">
+    getTwitters('<%= sidebar.twitter_user %>TypoTweets', {
+        id: '<%= sidebar.twitter_user %>', 
+        clearContents: true,
+        count: <%= sidebar.tweet_count %>, 
+        ignoreReplies: <%= sidebar.ignore_replies %>,
+		timeout: 60000,
+		template: '<li><a href="http://twitter.com/%user_screen_name%">%user_name%</a> "%text%" <a href="http://twitter.com/%user_screen_name%/statuses/%id%/">%time%</a></li><br/>'
+    });
+</script>
+
+<h3><%= sidebar.title %></h3>
+<div class="twitters">
+	<ul id="<%= sidebar.twitter_user %>TypoTweets">
+		<center><%= image_tag 'twitter-spinner.gif'  %></center>
+		<li><center>Loading <a href="http://twitter.com/<%= sidebar.twitter_user %>" target="_blank">tweets</a>...</center></li>
+	</ul>
+</div>
+
