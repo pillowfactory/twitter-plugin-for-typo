@@ -7,7 +7,7 @@
         count: <%= sidebar.tweet_count %>, 
         ignoreReplies: <%= sidebar.ignore_replies %>,
 		timeout: 60000,
-		template: '<li><a href="http://twitter.com/%user_screen_name%">%user_name%</a> "%text%" <a href="http://twitter.com/%user_screen_name%/statuses/%id%/">%time%</a></li><br/>'
+		template: '<li style="padding:3px"><a href="http://twitter.com/%user_screen_name%">%user_name%</a> "%text%" <a href="http://twitter.com/%user_screen_name%/statuses/%id%/">%time%</a></li>'
     });
 </script>
 
@@ -17,5 +17,5 @@
 		<center><%= image_tag 'twitter-spinner.gif'  %></center>
 		<li><center>Loading <a href="http://twitter.com/<%= sidebar.twitter_user %>" target="_blank">tweets</a>...</center></li>
 	</ul>
+        <div style="margin-top:-12px; border-top:1px dotted silver; margin-bottom:15px">Powered by <a href="http://www.twitter.com">Twitter</a><br/>  Written by <a href="http://www.pillowfactory.org">Luke Pillow</a></div>
 </div>
-
